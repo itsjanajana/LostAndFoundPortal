@@ -1,24 +1,24 @@
 # LostAndFoundPortal
 # Lost & Found Portal – IIITDM Kancheepuram
 
-Heyy, I am Anjana, and what I have tried to build here is a Lost and Found Portal for IIITDM-Kancheepuram. It's simple and the goal is to keep it lightweight, fast, and easily usable for students and staff to report lost or found items on campus. It can also report issues anonymously and it’s designed to be visually clean and functional. More on how the page works is explained on my How-We-Work page. 
+_Heyy, I am Anjana, and what I have tried to build here is a Lost and Found Portal for IIITDM-Kancheepuram. It's simple and the goal is to keep it lightweight, fast, and easily usable for students and staff to report lost or found items on campus. It can also report issues anonymously and it’s designed to be visually clean and functional. More on how the page works is explained on my How-We-Work page. _
 
 ## What it includes
 
-- A unified landing page with a toggle to show both lost and found items respectively. Also with an option to filter and search through the items. 
+_- A unified landing page with a toggle to show both lost and found items respectively. Also with an option to filter and search through the items. 
 - Dedicated forms to report lost or found items (with dropdowns, categories, and photo uploads)
 - A claim system where users can submit proof if they believe an item is theirs
 - A campus issue reporter page — anonymous by default — for non-item issues or feedback
 - About page, privacy info, and a “How We Work” page to keep things transparent
 
-There are basic animations, hover states, and a pastel dark-blue and white layout to keep things simple and not too flashy. I wanted it to be easy to use for students and staff of all ages.
+There are basic animations, hover states, and a pastel dark-blue and white layout to keep things simple and not too flashy. I wanted it to be easy to use for students and staff of all ages._
 
 **What I wanted to add but couldn’t**
 
-- Admin dashboard: A backend interface for admins to review claims, mark them verified, and accept verifications.  
+_- Admin dashboard: A backend interface for admins to review claims, mark them verified, and accept verifications.  
 - Real authentication for admins or claim verifiers
 - Priority Homepage visuals for loss of Important documents/ Expensive goods
-- Notification system when items are matched or claimed; Both for claimants and for the person who reported the found item.   
+- Notification system when items are matched or claimed; Both for claimants and for the person who reported the found item.   _
 
 But for now, I’m kinda happy I finally got it working within deadline. _Thankyou for giving my project your precious time<3_
 
