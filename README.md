@@ -1,14 +1,35 @@
 # LostAndFoundPortal
+# Lost & Found Portal – IIITDM Kancheepuram
 
+Heyy, I am Anjana, and what I have tried to build here is a Lost and Found Portal for IIITDM-Kancheepuram. It's simple and the goal is to keep it lightweight, fast, and easily usable for students and staff to report lost or found items on campus. It can also report issues anonymously and it’s designed to be visually clean and functional. More on how the page works is explained on my How-We-Work page. 
 
-working: https://github.com/user-attachments/assets/6becf94b-413e-4fbf-890b-3a0fcc8610c5
+## What it includes
+
+- A unified landing page with a toggle to show both lost and found items respectively. Also with an option to filter and search through the items. 
+- Dedicated forms to report lost or found items (with dropdowns, categories, and photo uploads)
+- A claim system where users can submit proof if they believe an item is theirs
+- A campus issue reporter page — anonymous by default — for non-item issues or feedback
+- About page, privacy info, and a “How We Work” page to keep things transparent
+
+There are basic animations, hover states, and a pastel dark-blue and white layout to keep things simple and not too flashy. I wanted it to be easy to use for students and staff of all ages.
+
+**What I wanted to add but couldn’t**
+
+- Admin dashboard: A backend interface for admins to review claims, mark them verified, and accept verifications.  
+- Real authentication for admins or claim verifiers
+- Priority Homepage visuals for loss of Important documents/ Expensive goods
+- Notification system when items are matched or claimed; Both for claimants and for the person who reported the found item.   
+
+But for now, I’m kinda happy I finally got it working within deadline. _Thankyou for giving my project your precious time<3_
+
+**WORKING VIDEO**: https://github.com/user-attachments/assets/6becf94b-413e-4fbf-890b-3a0fcc8610c5 (the campus issues and claiming are explained in screenshots below due to video-file-size exceeding and time delay)
 
 **SCREENSHOTS ATTACHED BELOW:** 
 
 **Landing page**_**(with aldready two submissions inserted)**:_
 ![image](https://github.com/user-attachments/assets/372e0edb-637b-4362-95e9-e16dc2423f83)
 
-**To "CLAIM" your item:**
+**To "CLAIM" your item:**  When someone finds a lost item and reports it, the rightful owner can claim it by submitting proof — like a photo that shows the item is theirs. This submission collects their email address so the admin (or whoever manages the portal) can verify the claim and get in touch with them.
 ![image](https://github.com/user-attachments/assets/983b6963-c81a-461c-81f1-360362a96319)
 
 **Report Lost:**
