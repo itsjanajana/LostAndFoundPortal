@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Items - Lost & Found IIITDMK</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #000;
+    }
+    header, footer {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+    }
+    header a, footer a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+    .controls {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+    .controls select, .controls input, .controls button {
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+    .items-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .item-card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: left;
+    }
+    .item-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .toggle-buttons {
+      margin-right: auto;
+    }
+    .toggle-buttons button {
+      margin-right: 10px;
+      padding: 6px 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>Lost & Found IIITDMK</div>
+    <nav>
+      <a href="report-found.html">Report Found</a>
+      <a href="report-lost.html">Report Lost</a>
+      <a href="view-items.html">View Items</a>
+      <a href="how-we-work.html">How We Work</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <section class="controls">
+    <div class="toggle-buttons">
+      <button onclick="switchView('lost')">Lost Items</button>
+      <button onclick="switchView('found')">Found Items</button>
+    </div>
+    <select id="filterType">
+      <option value="">Type</option>
+      <option value="Bottle">Bottle</option>
+      <option value="Wallet">Wallet</option>
+      <option value="Card">Card</option>
+    </select>
+    <select id="filterColor">
+      <option value="">Color</option>
+      <option value="Black">Black</option>
+      <option value="Blue">Blue</option>
+      <option value="Red">Red</option>
+    </select>
+    <select id="filterLocation">
+      <option value="">Location</option>
+      <option value="Hostel A">Hostel A</option>
+      <option value="Library">Library</option>
+      <option value="Mess">Mess</option>
+    </select>
+    <input type="text" id="searchBar" placeholder="Search...">
+  </section>
+
+  <section class="items-container" id="itemsContainer">
+    <!-- Cards will be injected by JS -->
+  </section>
+
+  <footer>
+    <div>© 2025 Lost & Found IIITDM Kancheepuram</div>
+    <div><a href="how-we-work.html">Privacy</a> | <a href="about.html">About Us</a></div>
+  </footer>
+
+  <script>
+    let currentView = 'lost';
+
+    function loadItems() {
+      const items = JSON.parse(localStorage.getItem('lost_found_items')) || [];
+      const filtered = items.filter(item => item.type === currentView);
+
+      const type = document.getElementById('filterType').value;
+      const color = document.getElementById('filterColor').value;
+      const location = document.getElementById('filterLocation').value;
+      const search = document.getElementById('searchBar').value.toLowerCase();
+
+      const result = filtered.filter(item => {
+        return (!type || item.itemType === type) &&
+               (!color || item.color === color) &&
+               (!location || item.location === location) &&
+               (item.name.toLowerCase().includes(search) ||
+                item.description.toLowerCase().includes(search));
+      });
+
+      const container = document.getElementById('itemsContainer');
+      container.innerHTML = result.map(item => `
+        <div class="item-card">
+          <img src="${item.photo}" alt="Item Image">
+          <h4>${item.name}</h4>
+          <p><strong>Type:</strong> ${item.itemType}</p>
+          <p><strong>Color:</strong> ${item.color}</p>
+          <p><strong>Location:</strong> ${item.location}</p>
+          <p><strong>Date:</strong> ${item.date}</p>
+          <p>${item.description}</p>
+        </div>
+      `).join('');
+    }
+
+    function switchView(view) {
+      currentView = view;
+      loadItems();
+    }
+
+    document.getElementById('filterType').onchange = loadItems;
+    document.getElementById('filterColor').onchange = loadItems;
+    document.getElementById('filterLocation').onchange = loadItems;
+    document.getElementById('searchBar').oninput = loadItems;
+
+    window.onload = () => {
+      loadItems();
+    }
+  </script>
+</body>
+</html>
