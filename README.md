@@ -23,6 +23,11 @@ working: https://github.com/user-attachments/assets/6becf94b-413e-4fbf-890b-3a0f
 ![image](https://github.com/user-attachments/assets/8a36befe-2fcd-4688-bc9e-0045a87166eb)
 ![image](https://github.com/user-attachments/assets/a0a033e4-3eb3-472d-bfff-fb89776708b1)
 
+**Campus Issues~ anonymous**
+![image](https://github.com/user-attachments/assets/c702a0cf-8f91-45fb-afbd-35a277a2d0c9)
+![image](https://github.com/user-attachments/assets/c7740ac3-1030-4083-9c0b-38c8a508d951)
+
+
 **About us page:**
 ![image](https://github.com/user-attachments/assets/f878e182-7d64-48e0-9209-025ce3435df4)
 
