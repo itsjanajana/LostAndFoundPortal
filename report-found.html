@@ -1,56 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
   <title>Report Found Item</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: #f9f9f9;
       margin: 0;
       padding: 0;
-      background: #fff;
     }
     header, footer {
       background: #000;
       color: #fff;
-      padding: 10px 20px;
+      padding: 12px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     header a, footer a {
       color: #fff;
+      margin-left: 20px;
       text-decoration: none;
-      margin-left: 15px;
     }
-    form {
-      max-width: 600px;
-      margin: 30px auto;
-      padding: 20px;
-      border: 1px solid #ccc;
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 20px;
     }
     label {
       display: block;
       margin-top: 15px;
+      font-weight: bold;
     }
-    input, textarea, select, button {
+    input, select, textarea, button {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
       margin-top: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
     button {
       margin-top: 20px;
-      background-color: #000;
-      color: #fff;
+      background: black;
+      color: white;
+      border: none;
       cursor: pointer;
+    }
+    button:hover {
+      background: #444;
+    }
+    .row {
+      display: flex;
+      gap: 20px;
+    }
+    .row > div {
+      flex: 1;
+    }
+    .message {
+      margin-top: 20px;
+      padding: 10px;
+      background: #e0ffe0;
+      border: 1px solid #8c8;
+      color: #060;
+      display: none;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div>Lost & Found IIITDMK</div>
+    <div><strong>Lost & Found IIITDMK</strong></div>
     <nav>
+      <a href="index.html">Home</a>
       <a href="report-found.html">Report Found</a>
       <a href="report-lost.html">Report Lost</a>
       <a href="view-items.html">View Items</a>
@@ -59,87 +88,147 @@
     </nav>
   </header>
 
-  <form id="foundForm">
-    <h2>Report Found Item</h2>
-    <label>Item Name:<input type="text" name="name" required></label>
-    <label>Your Name:<input type="text" name="personName" required></label>
-    <label>College ID:<input type="text" name="collegeId" required></label>
-    <label>Item Type:
-      <select name="itemType" required>
-        <option value="">Select</option>
-        <option>Bottle</option>
-        <option>Wallet</option>
-        <option>Card</option>
-        <option>Electronics</option>
-        <option>Keys</option>
-        <option>Notebook</option>
-      </select>
-    </label>
-    <label>Item Color:
-      <select name="color" required>
-        <option value="">Select</option>
-        <option>Black</option>
-        <option>Blue</option>
-        <option>Red</option>
-        <option>Green</option>
-        <option>Grey</option>
-      </select>
-    </label>
-    <label>Size:<input type="text" name="size"></label>
-    <label>Location (Dropdown):
-      <select name="location" required>
-        <option>Hostel A</option>
-        <option>Hostel B</option>
-        <option>Library</option>
-        <option>Mess</option>
-        <option>Lecture Hall</option>
-        <option>Playground</option>
-        <option>Other</option>
-      </select>
-    </label>
-    <label>Details:<textarea name="description" required></textarea></label>
-    <label>Upload Photo:<input type="file" name="photo" accept="image/*" required></label>
-    <button type="submit">Submit</button>
-    <button type="reset">Reset</button>
-  </form>
+  <div class="container">
+    <h2>Report a Found Item</h2>
+    <form id="foundForm">
+      <label>Item Name *
+        <input type="text" required id="itemName" placeholder="e.g., Black Wallet" />
+      </label>
+
+      <label>Your Name *
+        <input type="text" required id="yourName" placeholder="e.g., John Doe" />
+      </label>
+
+      <label>College ID *
+        <input type="text" required id="collegeId" placeholder="e.g., CS21B999" />
+      </label>
+
+      <div class="row">
+        <div>
+          <label>Item Type *
+            <select required id="itemType">
+              <option value="">-- Select Type --</option>
+              <option>Water Bottle</option>
+              <option>ID Card</option>
+              <option>Notebook</option>
+              <option>Electronics</option>
+              <option>Others</option>
+            </select>
+          </label>
+        </div>
+        <div>
+          <label>Color *
+            <select required id="color">
+              <option value="">-- Select Color --</option>
+              <option>Black</option>
+              <option>Blue</option>
+              <option>Red</option>
+              <option>Green</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <label>Size
+        <input type="text" id="size" placeholder="e.g., Small / Medium / Large" />
+      </label>
+
+      <label>Location/Area Found *
+        <select required id="location"></select>
+        <input type="text" id="newLocation" placeholder="+ Add a new location" />
+      </label>
+
+      <label>Date Found *
+        <input type="date" required id="dateFound" />
+      </label>
+
+      <label>Photo of Item *
+        <input type="file" accept="image/*" required id="photo" />
+      </label>
+
+      <label>Description / Notes
+        <textarea id="description" rows="4" placeholder="Any additional information..."></textarea>
+      </label>
+
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+
+      <div class="message" id="successMessage">Form submitted successfully!</div>
+    </form>
+  </div>
 
   <footer>
     <div>© 2025 Lost & Found IIITDM Kancheepuram</div>
-    <div><a href="how-we-work.html">Privacy</a> | <a href="about.html">About Us</a></div>
+    <div>
+      <a href="how-we-work.html">Privacy</a> |
+      <a href="about.html">About Us</a>
+    </div>
   </footer>
 
   <script>
-    document.getElementById('foundForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const form = event.target;
-      const reader = new FileReader();
-      const fileInput = form.photo.files[0];
+    const locationSelect = document.getElementById('location');
+    const newLocationInput = document.getElementById('newLocation');
 
-      reader.onload = function(e) {
-        const newItem = {
+    function loadLocations() {
+      let saved = JSON.parse(localStorage.getItem('locations') || '[]');
+      locationSelect.innerHTML = '<option value="">-- Select Location --</option>';
+      saved.forEach(loc => {
+        let opt = document.createElement('option');
+        opt.textContent = loc;
+        locationSelect.appendChild(opt);
+      });
+    }
+
+    newLocationInput.addEventListener('blur', () => {
+      const newLoc = newLocationInput.value.trim();
+      if (newLoc) {
+        let locs = JSON.parse(localStorage.getItem('locations') || '[]');
+        if (!locs.includes(newLoc)) {
+          locs.push(newLoc);
+          localStorage.setItem('locations', JSON.stringify(locs));
+          loadLocations();
+          locationSelect.value = newLoc;
+        }
+        newLocationInput.value = '';
+      }
+    });
+
+    loadLocations();
+
+    document.getElementById('foundForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const reader = new FileReader();
+      const file = document.getElementById('photo').files[0];
+      if (!file) return alert('Photo is required.');
+
+      reader.onload = function() {
+        const item = {
           type: 'found',
-          name: form.name.value,
-          personName: form.personName.value,
-          collegeId: form.collegeId.value,
-          itemType: form.itemType.value,
-          color: form.color.value,
-          size: form.size.value,
-          location: form.location.value,
-          description: form.description.value,
-          date: new Date().toISOString().split('T')[0],
-          photo: e.target.result
+          name: document.getElementById('itemName').value,
+          person: document.getElementById('yourName').value,
+          collegeId: document.getElementById('collegeId').value,
+          itemType: document.getElementById('itemType').value,
+          color: document.getElementById('color').value,
+          size: document.getElementById('size').value,
+          location: document.getElementById('location').value,
+          date: document.getElementById('dateFound').value,
+          photo: reader.result,
+          description: document.getElementById('description').value
         };
 
-        const existing = JSON.parse(localStorage.getItem('lost_found_items')) || [];
-        existing.unshift(newItem);
-        localStorage.setItem('lost_found_items', JSON.stringify(existing));
-        alert('Found item reported successfully!');
-        form.reset();
+        let items = JSON.parse(localStorage.getItem('lost_found_items') || '[]');
+        items.unshift(item);
+        localStorage.setItem('lost_found_items', JSON.stringify(items));
+
+        document.getElementById('foundForm').reset();
+        document.getElementById('successMessage').style.display = 'block';
+        setTimeout(() => {
+          document.getElementById('successMessage').style.display = 'none';
+        }, 3000);
       };
 
-      if (fileInput) {
-        reader.readAsDataURL(fileInput);
-      }
+      reader.readAsDataURL(file);
     });
   </script>
 </body>
