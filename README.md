@@ -13,7 +13,7 @@ _- About page, privacy info, and a “How We Work” page to keep things transpa
 
 _There are basic animations, hover states, and a pastel dark-blue and white layout to keep things simple and not too flashy. I wanted it to be easy to use for students and staff of all ages._
 
-**What I wanted to add but couldn’t**
+## What I wanted to add but couldn’t
 
 _- Admin dashboard: A backend interface for admins to review claims, mark them verified, and accept verifications._
 _- Real authentication for admins or claim verifiers_
@@ -22,9 +22,10 @@ _- Notification system when items are matched or claimed; Both for claimants and
 
 But for now, I’m kinda happy I finally got it working within deadline. _**Thankyou for giving my project your precious time<3**_
 
-**WORKING VIDEO**: https://github.com/user-attachments/assets/6becf94b-413e-4fbf-890b-3a0fcc8610c5 (the campus issues and claiming are explained in screenshots below due to video-file-size exceeding and time delay)
+## WORKING VIDEO:
+https://github.com/user-attachments/assets/6becf94b-413e-4fbf-890b-3a0fcc8610c5 (the campus issues and claiming are explained in screenshots below due to video-file-size exceeding and time delay)
 
-**SCREENSHOTS ATTACHED BELOW:** 
+## SCREENSHOTS ATTACHED BELOW:
 
 **Landing page**_**(with aldready two submissions inserted)**:_
 ![image](https://github.com/user-attachments/assets/372e0edb-637b-4362-95e9-e16dc2423f83)
