@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submit Proof - Claim Item</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f6fc;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background: #1a2d4e;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 650px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
+    h2 {
+      color: #1a2d4e;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-btn {
+      background: #1a2d4e;
+      color: white;
+    }
+    .reset-btn {
+      background: #ccc;
+      margin-left: 10px;
+    }
+    .success-msg {
+      color: green;
+      text-align: center;
+      font-weight: bold;
+      display: none;
+      margin-top: 20px;
+    }
+    footer {
+      font-size: 14px;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>Lost & Found IIITDMK</strong></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="report-found.html">Report Found</a>
+      <a href="report-lost.html">Report Lost</a>
+      <a href="view-items.html">View Items</a>
+      <a href="how-we-work.html">How We Work</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Submit Proof to Claim Item</h2>
+    <form id="proofForm">
+      <label>Your Name *</label>
+      <input type="text" placeholder="Enter your full name" required>
+
+      <label>Email Address *</label>
+      <input type="email" placeholder="Enter your email" required>
+
+      <label>College ID *</label>
+      <input type="text" placeholder="E.g., 2020BCS0000" required>
+
+      <label>Photo Proof *</label>
+      <input type="file" accept="image/*" required>
+
+      <label>Description / Reason why item belongs to you *</label>
+      <textarea placeholder="Mention identifying marks or details..." rows="4" required></textarea>
+
+      <button type="submit" class="submit-btn">Submit Proof</button>
+      <button type="reset" class="reset-btn">Reset</button>
+    </form>
+
+    <div class="success-msg" id="successMsg">Proof submitted successfully! Admin will contact you via email after verification.</div>
+  </div>
+
+  <footer>
+    <div>© 2025 Lost & Found IIITDM Kancheepuram</div>
+    <div>
+      <a href="how-we-work.html">Privacy</a> |
+      <a href="about.html">About Us</a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('proofForm');
+    const msg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      msg.style.display = 'block';
+      setTimeout(() => {
+        msg.style.display = 'none';
+      }, 4000);
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
