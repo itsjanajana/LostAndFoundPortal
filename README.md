@@ -1,7 +1,7 @@
 # LostAndFoundPortal
 # Lost & Found Portal – IIITDM Kancheepuram
 
-_Heyy, I am Anjana, and what I have tried to build here is a Lost and Found Portal for IIITDM-Kancheepuram. It's simple and the goal is to keep it lightweight, fast, and easily usable for students and staff to report lost or found items on campus. It can also report issues anonymously and it’s designed to be visually clean and functional. More on how the page works is explained on my How-We-Work page. _
+_Heyy, I am Anjana, and what I have tried to build here is a Lost and Found Portal for IIITDM-Kancheepuram. It's simple and the goal is to keep it lightweight, fast, and easily usable for students and staff to report lost or found items on campus. It can also report issues anonymously and it’s designed to be visually clean and functional. More on how the page works is explained on my How-We-Work page._
 
 ## What it includes
 
