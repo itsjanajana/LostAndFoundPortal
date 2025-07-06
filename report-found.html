@@ -2,316 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Report Found Item - Lost & Found IIITDMK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Found Item</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f9f9f9;
-      color: #111;
+      padding: 0;
+      background: #fff;
     }
-    header {
-      background-color: #fff;
-      border-bottom: 1px solid #ddd;
+    header, footer {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.8rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
     }
-    header h1 {
-      font-size: 1.4rem;
-      margin: 0;
-      color: #111;
-    }
-    nav a {
-      margin-left: 1.2rem;
+    header a, footer a {
+      color: #fff;
       text-decoration: none;
-      color: #111;
-      font-weight: 500;
+      margin-left: 15px;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 6px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    form label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: 500;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.6rem;
-      margin-top: 0.3rem;
+    form {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1rem;
     }
-    input[type="file"] {
-      padding: 0.4rem;
+    label {
+      display: block;
+      margin-top: 15px;
     }
-    .actions {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: space-between;
+    input, textarea, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
     }
     button {
-      padding: 0.6rem 1.2rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button[type="submit"] {
+      margin-top: 20px;
       background-color: #000;
-      color: white;
-    }
-    button[type="reset"] {
-      background-color: #ccc;
-    }
-    .success {
-      margin-top: 1rem;
-      color: green;
-      font-weight: 600;
-      text-align: center;
-      display: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem 0;
-      border-top: 1px solid #ddd;
-      margin-top: 3rem;
-      color: #666;
-      font-size: 0.95rem;
-    }
-    footer a {
-      margin: 0 1rem;
-      color: #555;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    .new-location-box {
-      display: none;
-      margin-top: 0.5rem;
+      color: #fff;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+  <header>
+    <div>Lost & Found IIITDMK</div>
+    <nav>
+      <a href="report-found.html">Report Found</a>
+      <a href="report-lost.html">Report Lost</a>
+      <a href="view-items.html">View Items</a>
+      <a href="how-we-work.html">How We Work</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>Lost & Found IIITDMK</h1>
-  <nav>
-    <a href="report-found.html">Report Found</a>
-    <a href="report-lost.html">Report Lost</a>
-    <a href="view-items.html">View Items</a>
-    <a href="how-we-work.html">How We Work</a>
-    <a href="about.html">About Us</a>
-  </nav>
-</header>
-
-<main>
-  <h2>Report a Found Item</h2>
-  <form id="found-form">
-    <label>Item Name<span style="color:red;"> *</span>
-      <input type="text" name="itemName" required>
-    </label>
-
-    <label>Your Name<span style="color:red;"> *</span>
-      <input type="text" name="finderName" required>
-    </label>
-
-    <label>College ID<span style="color:red;"> *</span>
-      <input type="text" name="collegeId" required>
-    </label>
-
-    <label>Item Type<span style="color:red;"> *</span>
+  <form id="foundForm">
+    <h2>Report Found Item</h2>
+    <label>Item Name:<input type="text" name="name" required></label>
+    <label>Your Name:<input type="text" name="personName" required></label>
+    <label>College ID:<input type="text" name="collegeId" required></label>
+    <label>Item Type:
       <select name="itemType" required>
-        <option value="">-- Select Type --</option>
-        <option>Water Bottle</option>
+        <option value="">Select</option>
+        <option>Bottle</option>
         <option>Wallet</option>
         <option>Card</option>
-        <option>Charger</option>
-        <option>Earphones</option>
+        <option>Electronics</option>
+        <option>Keys</option>
         <option>Notebook</option>
-        <option>Others</option>
       </select>
     </label>
-
-    <label>Color<span style="color:red;"> *</span>
-      <select name="itemColor" required>
-        <option value="">-- Select Color --</option>
+    <label>Item Color:
+      <select name="color" required>
+        <option value="">Select</option>
         <option>Black</option>
         <option>Blue</option>
         <option>Red</option>
-        <option>Grey</option>
-        <option>White</option>
         <option>Green</option>
+        <option>Grey</option>
+      </select>
+    </label>
+    <label>Size:<input type="text" name="size"></label>
+    <label>Location (Dropdown):
+      <select name="location" required>
+        <option>Hostel A</option>
+        <option>Hostel B</option>
+        <option>Library</option>
+        <option>Mess</option>
+        <option>Lecture Hall</option>
+        <option>Playground</option>
         <option>Other</option>
       </select>
     </label>
-
-    <label>Size
-      <input type="text" name="itemSize" placeholder="Small / Medium / Large / etc.">
-    </label>
-
-    <label>Location/Area Found<span style="color:red;"> *</span>
-      <select id="foundLocation" name="foundLocation" required></select>
-      <div class="new-location-box">
-        <input type="text" id="newLocation" placeholder="Add new location">
-        <button type="button" id="saveLocation">Save Location</button>
-      </div>
-    </label>
-    <button type="button" id="addNewLocation" style="margin-top:0.5rem;">+ Add a new location</button>
-
-    <label>Date Found<span style="color:red;"> *</span>
-      <input type="date" name="dateFound" id="date-found" required>
-    </label>
-
-    <label>Photo of Item<span style="color:red;"> *</span>
-      <input type="file" id="photo-upload" accept="image/png, image/jpeg" required>
-    </label>
-
-    <label>Description / Notes
-      <textarea name="description" rows="3" placeholder="Any additional info..."></textarea>
-    </label>
-
-    <div class="actions">
-      <button type="submit">Submit</button>
-      <button type="reset">Reset</button>
-    </div>
-
-    <div class="success" id="confirmation-message"></div>
+    <label>Details:<textarea name="description" required></textarea></label>
+    <label>Upload Photo:<input type="file" name="photo" accept="image/*" required></label>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
   </form>
-</main>
 
-<footer>
-  © 2025 Lost & Found IIITDM Kancheepuram
-  | <a href="how-we-work.html">Privacy</a>
-  | <a href="about.html">About Us</a>
-</footer>
+  <footer>
+    <div>© 2025 Lost & Found IIITDM Kancheepuram</div>
+    <div><a href="how-we-work.html">Privacy</a> | <a href="about.html">About Us</a></div>
+  </footer>
 
-<script>
-  (function() {
-    const LOC_KEY = 'lost_locations';
-    const ITEM_KEY = 'lost_found_items';
-
-    const locationSelect = document.getElementById('foundLocation');
-    const newLocInput = document.getElementById('newLocation');
-    const addLocBtn = document.getElementById('addNewLocation');
-    const saveLocBtn = document.getElementById('saveLocation');
-    const newLocBox = document.querySelector('.new-location-box');
-
-    function loadLocations() {
-      let locations = JSON.parse(localStorage.getItem(LOC_KEY)) || [
-        "Academic Block A", "Academic Block B", "Admin Block", "Hostel A", "Hostel B",
-        "Cafeteria", "Library", "Lab Complex", "Playground", "Main Gate"
-      ];
-      populateDropdown(locations);
-    }
-
-    function populateDropdown(locList) {
-      locationSelect.innerHTML = '<option value="">-- Select Location --</option>';
-      locList.forEach(loc => {
-        const opt = document.createElement('option');
-        opt.value = opt.textContent = loc;
-        locationSelect.appendChild(opt);
-      });
-    }
-
-    addLocBtn.addEventListener('click', () => {
-      newLocBox.style.display = 'block';
-    });
-
-    saveLocBtn.addEventListener('click', () => {
-      const val = newLocInput.value.trim();
-      if (!val) return;
-      let locs = JSON.parse(localStorage.getItem(LOC_KEY)) || [];
-      if (!locs.includes(val)) locs.push(val);
-      localStorage.setItem(LOC_KEY, JSON.stringify(locs));
-      populateDropdown(locs);
-      locationSelect.value = val;
-      newLocBox.style.display = 'none';
-      newLocInput.value = '';
-    });
-
-    const dateInput = document.getElementById('date-found');
-    dateInput.max = new Date().toISOString().split('T')[0];
-
-    const form = document.getElementById('found-form');
-    const msg = document.getElementById('confirmation-message');
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      msg.style.display = 'none';
-
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      const file = document.getElementById('photo-upload').files[0];
-      if (!file || !['image/jpeg','image/png'].includes(file.type) || file.size > 2*1024*1024) {
-        alert("Upload a valid JPG/PNG image under 2MB.");
-        return;
-      }
-
+  <script>
+    document.getElementById('foundForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const form = event.target;
       const reader = new FileReader();
-      reader.onload = () => {
+      const fileInput = form.photo.files[0];
+
+      reader.onload = function(e) {
         const newItem = {
-          id: Date.now().toString(),
-          title: form['itemName'].value.trim(),
-          personName: form['finderName'].value.trim(),
-          collegeId: form['collegeId'].value.trim(),
-          itemType: form['itemType'].value,
-          itemColor: form['itemColor'].value,
-          itemSize: form['itemSize'].value.trim(),
-          lostLocation: form['foundLocation'].value,
-          date: form['dateFound'].value,
-          description: form['description'].value.trim(),
-          imageUrl: reader.result,
-          status: 'found'
+          type: 'found',
+          name: form.name.value,
+          personName: form.personName.value,
+          collegeId: form.collegeId.value,
+          itemType: form.itemType.value,
+          color: form.color.value,
+          size: form.size.value,
+          location: form.location.value,
+          description: form.description.value,
+          date: new Date().toISOString().split('T')[0],
+          photo: e.target.result
         };
-        const items = JSON.parse(localStorage.getItem(ITEM_KEY)) || [];
-        items.push(newItem);
-        localStorage.setItem(ITEM_KEY, JSON.stringify(items));
 
-        msg.textContent = "Thank you! Found item reported.";
-        msg.style.display = 'block';
+        const existing = JSON.parse(localStorage.getItem('lost_found_items')) || [];
+        existing.unshift(newItem);
+        localStorage.setItem('lost_found_items', JSON.stringify(existing));
+        alert('Found item reported successfully!');
         form.reset();
-        dateInput.max = new Date().toISOString().split('T')[0];
-        newLocBox.style.display = 'none';
       };
-      reader.readAsDataURL(file);
+
+      if (fileInput) {
+        reader.readAsDataURL(fileInput);
+      }
     });
-
-    form.addEventListener('reset', () => {
-      msg.style.display = 'none';
-      newLocBox.style.display = 'none';
-      newLocInput.value = '';
-      locationSelect.value = "";
-    });
-
-    loadLocations();
-  })();
-</script>
-
+  </script>
 </body>
 </html>
