@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Us - Lost & Found IIITDMK</title>
+  <style>
+    body {
+      margin: 0; font-family: Arial, sans-serif;
+      background: #f2f6fc; color: #1a1a1a;
+    }
+    header, footer {
+      background: #1a2d4e; color: white;
+      padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav a {
+      color: white; text-decoration: none;
+      margin-left: 20px; font-weight: bold;
+    }
+    .container {
+      max-width: 800px; margin: 40px auto;
+      background: white; padding: 30px;
+      border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
+    h2 { color: #1a2d4e; margin-bottom: 10px; }
+    p { line-height: 1.6; }
+    label { display: block; margin-top: 20px; font-weight: bold; }
+    input, textarea {
+      width: 100%; padding: 10px; margin-top: 6px;
+      border: 1px solid #ccc; border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px; border: none;
+      border-radius: 5px; background: #1a2d4e; color: white;
+      cursor: pointer; font-size: 1rem;
+    }
+    .success-msg {
+      margin-top: 20px; color: green;
+      text-align: center; font-weight: bold; display: none;
+    }
+    footer {
+      font-size: 14px;
+      display: flex; justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>Lost & Found IIITDMK</strong></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="report-found.html">Report Found</a>
+      <a href="report-lost.html">Report Lost</a>
+      <a href="view-items.html">View Items</a>
+      <a href="how-we-work.html">How We Work</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>About Us</h2>
+    <p>
+      This platform helps students and staff of IIITDM Kancheepuram report and retrieve lost or found items efficiently and transparently. Our aim is to connect the right items back to their rightful owners with minimum hassle.
+    </p>
+    <p>
+      The system is managed by the Student Affairs Office and supported by campus volunteers. Found items are physically stored in the Lost & Found Room, Admin Block Ground Floor.
+    </p>
+
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:lostfound@iiitdm.ac.in">lostfound@iiitdm.ac.in</a></p>
+    <p>Phone: +91-XXXXXXXXXX</p>
+    <p>Office Hours: Mon–Fri, 10am to 5pm</p>
+
+    <form id="contactForm">
+      <label>Your Name *</label>
+      <input type="text" placeholder="Full name" required>
+
+      <label>Your Email *</label>
+      <input type="email" placeholder="Email address" required>
+
+      <label>Your Message *</label>
+      <textarea placeholder="Write your message here..." rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="success-msg" id="contactSuccess">Message sent successfully. We'll get back to you shortly!</div>
+  </div>
+
+  <footer>
+    <div>© 2025 Lost & Found IIITDM Kancheepuram</div>
+    <div>
+      <a href="how-we-work.html">Privacy</a> |
+      <a href="about.html">About Us</a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('contactSuccess');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      msg.style.display = 'block';
+      setTimeout(() => {
+        msg.style.display = 'none';
+      }, 4000);
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
