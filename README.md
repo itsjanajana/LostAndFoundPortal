@@ -45,7 +45,7 @@ But for now, I’m kinda happy I finally got it working within deadline. _**Than
 ![image](https://github.com/user-attachments/assets/a0a033e4-3eb3-472d-bfff-fb89776708b1)
 
 **Campus Issues~ anonymous**
-![image](https://github.com/user-attachments/assets/c702a0cf-8f91-45fb-afbd-35a277a2d0c9)
+![image](https://github.com/user-attachments/assets/a8c73bdb-cf69-4c10-a7e1-8b769c90134f)
 ![image](https://github.com/user-attachments/assets/c7740ac3-1030-4083-9c0b-38c8a508d951)
 
 
