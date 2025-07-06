@@ -6,9 +6,13 @@ _Heyy, I am Anjana, and what I have tried to build here is a Lost and Found Port
 ## What it includes
 
 _A unified landing page with a toggle to show both lost and found items respectively. Also with an option to filter and search through the items._
+
 _- Dedicated forms to report lost or found items (with dropdowns, categories, and photo uploads)_
+
 _- A claim system where users can submit proof if they believe an item is theirs_
+
 _- A campus issue reporter page — anonymous by default — for non-item issues or feedback_
+
 _- About page, privacy info, and a “How We Work” page to keep things transparent_
 
 _There are basic animations, hover states, and a pastel dark-blue and white layout to keep things simple and not too flashy. I wanted it to be easy to use for students and staff of all ages._
