@@ -5,353 +5,379 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lost & Found IIITDM Kancheepuram</title>
 <style>
-  /* Reset & base */
+  /* --- Reset and base --- */
   * {
     box-sizing: border-box;
   }
   body {
     margin: 0; padding: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #fff;
     color: #000;
-    user-select: none;
-  }
-
-  /* Container */
-  #container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  button {
+    cursor: pointer;
   }
 
-  /* Top Nav Bar */
-  nav {
+  /* --- Top nav bar --- */
+  header {
     position: sticky;
     top: 0;
-    background: #fff;
+    background: white;
     border-bottom: 1px solid #000;
-    z-index: 999;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 12px 24px;
-  }
-  nav .logo {
-    font-weight: 900;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-  }
-  nav ul {
-    list-style: none;
-    margin: 0; padding: 0;
-    display: flex;
-    gap: 24px;
+    align-items: center;
+    padding: 0 24px;
+    height: 50px;
     font-weight: 700;
+    z-index: 10;
+  }
+  header .logo {
+    font-size: 1.3rem;
+    user-select: none;
+  }
+  nav a {
+    margin-left: 24px;
+    font-weight: 600;
     font-size: 1rem;
   }
-  nav ul li a {
-    text-decoration: none;
-    color: #000;
-    padding: 6px 0;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s;
-  }
-  nav ul li a:hover,
-  nav ul li a:focus {
-    border-bottom: 2px solid #000;
-    outline: none;
+  nav a:hover {
+    color: #222;
   }
 
-  /* Main Layout: 2 columns */
+  /* --- Layout --- */
   main {
     display: flex;
-    margin-top: 32px;
-    gap: 32px;
+    margin-top: 30px;
+    gap: 24px;
   }
-
-  /* Left tab - Image slider */
-  .left-tab {
+  /* Left tab - carousel container */
+  .carousel-container {
     flex: 7;
     border: 1px solid #000;
-    padding: 16px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    user-select: none;
+  }
+  .carousel-image-wrapper {
     position: relative;
-    user-select: none;
+    width: 100%;
+    max-width: 600px;
+    height: 360px;
+    border: 1px solid #000;
+    overflow: hidden;
   }
-
-  .slider-image {
-    max-width: 100%;
-    max-height: 350px;
+  .carousel-image-wrapper img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    border: 1px solid #000;
+    background: #eee;
   }
-
-  .slider-text {
-    margin-top: 16px;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.25rem;
-    user-select: text;
-  }
-
-  .slider-desc {
-    font-weight: 400;
-    margin: 8px 0 12px;
-    font-size: 1rem;
-    color: #222;
-    user-select: text;
-  }
-
-  .view-more {
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    color: #000;
-    border: 1px solid #000;
-    padding: 8px 16px;
-    display: inline-block;
-    transition: background-color 0.3s, color 0.3s;
-    user-select: none;
-  }
-  .view-more:hover,
-  .view-more:focus {
-    background-color: #000;
-    color: #fff;
-    outline: none;
-  }
-
-  /* Arrows */
-  .arrow-btn {
+  .carousel-arrows {
     position: absolute;
     top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     transform: translateY(-50%);
-    font-weight: 900;
-    font-size: 2rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: #000;
+    pointer-events: none;
+  }
+  .carousel-arrows button {
+    pointer-events: all;
+    background: rgba(255,255,255,0.8);
+    border: 1px solid #000;
+    font-weight: 700;
+    font-size: 1.8rem;
+    padding: 4px 12px;
     user-select: none;
-    padding: 8px;
-    transition: color 0.3s;
+    transition: background-color 0.2s ease;
   }
-  .arrow-btn:hover,
-  .arrow-btn:focus {
+  .carousel-arrows button:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  .carousel-text {
+    margin-top: 12px;
+    text-align: center;
+  }
+  .carousel-text h3 {
+    margin: 0 0 6px 0;
+    font-weight: 700;
+  }
+  .carousel-text p {
+    margin: 0 0 8px 0;
+  }
+  .carousel-text a {
+    font-weight: 700;
+    color: #000;
+  }
+  .carousel-text a:hover {
     color: #555;
-    outline: none;
-  }
-  .arrow-left {
-    left: 8px;
-  }
-  .arrow-right {
-    right: 8px;
   }
 
-  /* Right tab - Sidebar */
-  .right-tab {
+  /* Right tab - search + action tabs */
+  .right-sidebar {
     flex: 3;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
   }
-
-  /* Search box */
-  .search-box {
+  .search-bar {
     border: 1px solid #000;
     padding: 8px 12px;
-  }
-  .search-box input[type="search"] {
-    width: 100%;
-    border: none;
-    outline: none;
     font-size: 1rem;
-    font-weight: 400;
-    padding: 6px 4px;
   }
-
-  /* Action tabs */
+  .action-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
   .action-tab {
     border: 1px solid #000;
-    padding: 20px 0;
-    text-align: center;
+    padding: 20px 12px;
     font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
+    text-align: center;
+    background: #fff;
+    transition: background-color 0.2s ease, color 0.2s ease;
     user-select: none;
-    transition: background-color 0.3s, color 0.3s;
   }
-  .action-tab:hover,
-  .action-tab:focus {
-    background-color: #000;
+  .action-tab:hover {
+    background: #000;
     color: #fff;
-    outline: none;
   }
 
   /* Footer */
   footer {
-    margin-top: 64px;
-    padding: 12px 24px;
+    margin-top: 40px;
     border-top: 1px solid #000;
-    text-align: center;
+    padding: 12px 24px;
     font-size: 0.9rem;
-    color: #111;
-    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    color: #333;
   }
   footer a {
-    text-decoration: none;
-    color: #000;
-    font-weight: 700;
-    margin: 0 12px;
-    transition: color 0.3s;
+    color: #333;
+    margin-left: 16px;
   }
-  footer a:hover,
-  footer a:focus {
+  footer a:hover {
     text-decoration: underline;
-    outline: none;
   }
 </style>
 </head>
 <body>
-<nav aria-label="Primary Navigation">
-  <div class="logo" tabindex="0">Lost & Found IIITDM</div>
-  <ul>
-    <li><a href="report-found.html" tabindex="0">Report Found</a></li>
-    <li><a href="report-lost.html" tabindex="0">Report Lost</a></li>
-    <li><a href="view-items.html" tabindex="0">View Items</a></li>
-    <li><a href="how-we-work.html" tabindex="0">How We Work</a></li>
-    <li><a href="about.html" tabindex="0">About Us</a></li>
-  </ul>
-</nav>
 
-<div id="container">
-  <main>
-    <!-- LEFT: Image slider -->
-    <section class="left-tab" aria-label="Lost items image slider">
-      <button class="arrow-btn arrow-left" aria-label="Previous lost item" tabindex="0">&#x276E;</button>
-      <img
-        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-        alt="Black backpack with red zipper"
-        class="slider-image"
-        id="slider-image"
-        loading="lazy"
-      />
-      <div class="slider-text" id="slider-title">Black Backpack</div>
-      <div class="slider-desc" id="slider-desc">Lost near the main library</div>
-      <a href="view-items.html" class="view-more" tabindex="0">View More →</a>
-      <button class="arrow-btn arrow-right" aria-label="Next lost item" tabindex="0">&#x276F;</button>
-    </section>
+<header>
+  <div class="logo">Lost & Found IIITDM Kancheepuram</div>
+  <nav>
+    <a href="report-found.html">Report Found</a>
+    <a href="report-lost.html">Report Lost</a>
+    <a href="view-items.html">View Items</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="how-we-work.html">How We Work</a>
+  </nav>
+</header>
 
-    <!-- RIGHT: Search + action tabs -->
-    <aside class="right-tab" aria-label="Actions and search">
-      <div class="search-box">
-        <label for="search-input" class="visually-hidden">Search lost items</label>
-        <input
-          type="search"
-          id="search-input"
-          name="search"
-          placeholder="Search item by name, color, or location..."
-          aria-describedby="search-desc"
-          autocomplete="off"
-        />
-      </div>
-      <button class="action-tab" onclick="location.href='report-found.html'" tabindex="0">Report Found</button>
-      <button class="action-tab" onclick="location.href='report-lost.html'" tabindex="0">Report Lost</button>
-      <button class="action-tab" onclick="location.href='about.html'" tabindex="0">About Us</button>
-    </aside>
-  </main>
-</div>
+<main>
+  <!-- Left carousel -->
+  <section class="carousel-container" aria-label="Lost items carousel">
+    <div class="carousel-image-wrapper">
+      <button aria-label="Previous item" id="prev-btn" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);z-index:2;">&#8592;</button>
+      <img src="" alt="Lost item image" id="carousel-image" />
+      <button aria-label="Next item" id="next-btn" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);z-index:2;">&#8594;</button>
+    </div>
+    <div class="carousel-text">
+      <h3 id="carousel-title">Loading...</h3>
+      <p id="carousel-desc">Please wait</p>
+      <a href="view-items.html" id="view-more-link">View More →</a>
+    </div>
+  </section>
 
-<footer role="contentinfo">
-  <span>© 2025 Lost & Found — IIITDM Kancheepuram</span>
-  <a href="how-we-work.html" tabindex="0">Privacy</a> |
-  <a href="about.html" tabindex="0">About Us</a>
+  <!-- Right sidebar -->
+  <aside class="right-sidebar" aria-label="Sidebar with search and actions">
+    <input type="search" placeholder="Search item by name, color, or location..." class="search-bar" id="search-input" aria-label="Search lost items" />
+    <div class="action-tabs">
+      <a href="report-found.html" class="action-tab" role="button" tabindex="0">Report Found</a>
+      <a href="report-lost.html" class="action-tab" role="button" tabindex="0">Report Lost</a>
+      <a href="about.html" class="action-tab" role="button" tabindex="0">About Us</a>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div>© 2025 Lost & Found IIITDM Kancheepuram</div>
+  <div>
+    <a href="how-we-work.html">Privacy (How We Work)</a> |
+    <a href="about.html">About Us</a>
+  </div>
 </footer>
 
 <script>
-  (() => {
-    // Sample lost items data
-    const lostItems = [
-      {
-        title: "Black Backpack",
-        desc: "Lost near the main library",
-        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      },
-      {
-        title: "Blue Wallet",
-        desc: "Lost near the cafeteria",
-        img: "https://images.unsplash.com/photo-1539887540280-6c41a10a3e87?auto=format&fit=crop&w=800&q=80",
-      },
-      {
-        title: "ID Card",
-        desc: "Lost in hostel D",
-        img: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=800&q=80",
-      },
-      {
-        title: "Set of Keys",
-        desc: "Lost near main gate",
-        img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-      },
-    ];
-
-    let currentIndex = 0;
-
-    // Elements
-    const sliderImage = document.getElementById("slider-image");
-    const sliderTitle = document.getElementById("slider-title");
-    const sliderDesc = document.getElementById("slider-desc");
-
-    const prevBtn = document.querySelector(".arrow-left");
-    const nextBtn = document.querySelector(".arrow-right");
-
-    function updateSlider(index) {
-      const item = lostItems[index];
-      sliderImage.src = item.img;
-      sliderImage.alt = item.title + ", " + item.desc;
-      sliderTitle.textContent = item.title;
-      sliderDesc.textContent = item.desc;
+  // --- Helper: sample items for demo ---
+  // Items have id, title, description, imageUrl, status ('lost' or 'found'), date (ISO string)
+  const sampleItems = [
+    {
+      id: '1',
+      title: 'Black Wallet',
+      description: 'Leather wallet lost near Library',
+      imageUrl: 'https://via.placeholder.com/600x360?text=Black+Wallet',
+      status: 'lost',
+      date: '2025-07-01T12:00:00Z'
+    },
+    {
+      id: '2',
+      title: 'Red Backpack',
+      description: 'Lost near Hostel Block B',
+      imageUrl: 'https://via.placeholder.com/600x360?text=Red+Backpack',
+      status: 'lost',
+      date: '2025-07-02T09:30:00Z'
+    },
+    {
+      id: '3',
+      title: 'Silver Watch',
+      description: 'Lost at Cafeteria',
+      imageUrl: 'https://via.placeholder.com/600x360?text=Silver+Watch',
+      status: 'lost',
+      date: '2025-07-03T16:45:00Z'
+    },
+    {
+      id: '4',
+      title: 'Blue Umbrella',
+      description: 'Lost in Academic Block',
+      imageUrl: 'https://via.placeholder.com/600x360?text=Blue+Umbrella',
+      status: 'lost',
+      date: '2025-07-04T14:15:00Z'
+    },
+    {
+      id: '5',
+      title: 'Pair of Glasses',
+      description: 'Lost near Sports Complex',
+      imageUrl: 'https://via.placeholder.com/600x360?text=Pair+of+Glasses',
+      status: 'lost',
+      date: '2025-07-05T11:00:00Z'
+    },
+    {
+      id: '6',
+      title: 'Green Water Bottle',
+      description: 'Lost near Lecture Hall 3',
+      imageUrl: 'https://via.placeholder.com/600x360?text=Green+Water+Bottle',
+      status: 'lost',
+      date: '2025-07-06T10:00:00Z'
     }
+  ];
 
-    prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + lostItems.length) % lostItems.length;
-      updateSlider(currentIndex);
-    });
+  // --- Storage key ---
+  const STORAGE_KEY = 'lostFoundItems';
 
-    nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % lostItems.length;
-      updateSlider(currentIndex);
-    });
-
-    // Initialize slider
-    updateSlider(currentIndex);
-
-    // Search box behavior: Redirect to view-items.html with query param on Enter
-    const searchInput = document.getElementById("search-input");
-    searchInput.addEventListener("keydown", e => {
-      if (e.key === "Enter") {
-        const query = e.target.value.trim();
-        if(query.length > 0) {
-          window.location.href = `view-items.html?search=${encodeURIComponent(query)}`;
+  // --- Get items from localStorage or fallback to sampleItems ---
+  function getItems() {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          return parsed;
         }
+      } catch (e) {
+        // fallback
       }
-    });
-  })();
+    }
+    return sampleItems;
+  }
+
+  // --- Save items to localStorage ---
+  function saveItems(items) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  }
+
+  // --- Filter lost items and sort by date descending ---
+  function getLatestLostItems(count = 5) {
+    const items = getItems()
+      .filter(item => item.status === 'lost')
+      .sort((a,b) => new Date(b.date) - new Date(a.date));
+    return items.slice(0, count);
+  }
+
+  // --- Carousel State ---
+  let currentIndex = 0;
+  let lostItems = getLatestLostItems();
+
+  // --- DOM Elements ---
+  const imgEl = document.getElementById('carousel-image');
+  const titleEl = document.getElementById('carousel-title');
+  const descEl = document.getElementById('carousel-desc');
+  const viewMoreLink = document.getElementById('view-more-link');
+
+  // --- Render the current slide ---
+  function renderSlide(index) {
+    if (lostItems.length === 0) {
+      titleEl.textContent = "No lost items reported yet.";
+      descEl.textContent = "Please check back later or report your lost item.";
+      imgEl.src = 'https://via.placeholder.com/600x360?text=No+Items';
+      imgEl.alt = 'No lost items available';
+      viewMoreLink.style.display = 'none';
+      return;
+    }
+    const item = lostItems[index];
+    imgEl.src = item.imageUrl;
+    imgEl.alt = item.title;
+    titleEl.textContent = item.title;
+    descEl.textContent = item.description;
+    viewMoreLink.style.display = 'inline';
+  }
+
+  // --- Show next slide ---
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % lostItems.length;
+    renderSlide(currentIndex);
+  }
+
+  // --- Show previous slide ---
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + lostItems.length) % lostItems.length;
+    renderSlide(currentIndex);
+  }
+
+  // --- Event listeners for arrows ---
+  document.getElementById('next-btn').addEventListener('click', nextSlide);
+  document.getElementById('prev-btn').addEventListener('click', prevSlide);
+
+  // --- Initial render ---
+  renderSlide(currentIndex);
+
+  // --- Search bar handler ---
+  document.getElementById('search-input').addEventListener('keypress', function(e){
+    if(e.key === 'Enter'){
+      const query = e.target.value.trim();
+      if(query.length > 0){
+        // Go to view-items page with search query param
+        window.location.href = 'view-items.html?search=' + encodeURIComponent(query);
+      }
+    }
+  });
+
+  // --- Listen for storage events to update carousel dynamically if other pages add items ---
+  window.addEventListener('storage', function(e){
+    if(e.key === STORAGE_KEY){
+      lostItems = getLatestLostItems();
+      currentIndex = 0;
+      renderSlide(currentIndex);
+    }
+  });
 </script>
 
-<!-- Visually hidden for accessibility -->
-<style>
-  .visually-hidden {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0 0 0 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
-  }
-</style>
 </body>
 </html>
