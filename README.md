@@ -16,9 +16,13 @@ _There are basic animations, hover states, and a pastel dark-blue and white layo
 ## What I wanted to add but couldn’t
 
 _- Admin dashboard: A backend interface for admins to review claims, mark them verified, and accept verifications._
+
 _- Real authentication for admins or claim verifiers_
+
 _- Priority Homepage visuals for loss of Important documents/ Expensive goods_
+
 _- Notification system when items are matched or claimed; Both for claimants and for the person who reported the found item._
+
 
 But for now, I’m kinda happy I finally got it working within deadline. _**Thankyou for giving my project your precious time<3**_
 
