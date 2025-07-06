@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report Campus Issue - IIITDMK</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f8ff;
+      color: #000;
+    }
+    header, footer {
+      background-color: #0a2540;
+      color: #fff;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0a2540;
+    }
+    label {
+      display: block;
+      margin-top: 16px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 24px;
+      background-color: #0a2540;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #143d68;
+    }
+    .message {
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+      text-align: center;
+    }
+    footer {
+      font-size: 14px;
+      justify-content: space-between;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>Lost & Found IIITDMK</strong></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="report-found.html">Report Found</a>
+      <a href="report-lost.html">Report Lost</a>
+      <a href="view-items.html">View Items</a>
+      <a href="how-we-work.html">How We Work</a>
+      <a href="about.html">About Us</a>
+      <a href="campus-issues.html">Campus Issues</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Report a Campus Issue (Anonymous)</h1>
+    <form id="issueForm">
+      <label for="category">Issue Category *</label>
+      <select id="category" required>
+        <option value="">-- Select Category --</option>
+        <option>Cleanliness</option>
+        <option>Electrical Issue</option>
+        <option>Water Leak</option>
+        <option>Internet/Network</option>
+        <option>Safety/Hazard</option>
+        <option>Broken Equipment</option>
+        <option>Other</option>
+      </select>
+
+      <label for="location">Location of Issue *</label>
+      <input type="text" id="location" placeholder="e.g., Hostel A, 2nd Floor Washroom" required />
+
+      <label for="description">Describe the Issue *</label>
+      <textarea id="description" rows="4" placeholder="e.g., The fan is not working in classroom 210." required></textarea>
+
+      <label for="photo">Upload Photo (Optional)</label>
+      <input type="file" id="photo" accept="image/*" />
+
+      <button type="submit">Submit</button>
+    </form>
+    <div class="message" id="msg"></div>
+  </div>
+
+  <footer>
+    <div>© 2025 Lost & Found IIITDM Kancheepuram</div>
+    <div>
+      <a href="how-we-work.html">Privacy</a> |
+      <a href="about.html">About Us</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('issueForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('msg').textContent = "Your report has been anonymously submitted. Thank you!";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
 
